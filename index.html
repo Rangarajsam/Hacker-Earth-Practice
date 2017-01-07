@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hacker Earth Practice</title>
+    <link href="app.css" type="text/css" rel="stylesheet">
+</head>
+
+<body ng-app="hePractice">
+    <div class="app-container" ng-controller="PbmController">
+        <div class="app-header">
+            <div class="app-logo">Hacker Earth Practice</div>
+            <div class="search-holder">
+                <input type="text" class="search-box">
+                <h2 class="search-title">Search using Tag</h2>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="sort-by-container">
+            <div class="sort-by-holder">
+                <p class="sort-by-title">Sort By</p>
+                <div class="sort-by-btn">Rating</div>
+                <div class="sort-by-btn">Like</div>
+                <div class="clear"></div>
+            </div>
+            <div class="tt-likes-container">
+                <div class="tt-likes-holder">
+                    Total Likes : 21
+                </div>
+                <div class="tt-likes-holder brdr-right-zero">
+                    API Hits : 600
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="app-content-container">
+
+            <div class="pbm-tile-container" ng-repeat="pbm in pbms">
+                <div class="pbm-tile-holder">
+                    <div class="pbm-tile-img-holder">
+                        <img ng-src="{{pbm.image}}" >
+                    </div>
+                    <div class="pbm-tile-cont-holder">
+                        <h2 class="pbm-tile-title">Monk and his friends</h2>
+                        <p class="pbm-solved mgn-btm-10px">Solved by : {{pbm.solved_by}}</p>
+                        <div class="pbm-rating-container mgn-btm-10px">
+                            <p class="pbm-rating-title">Rate</p>
+                            <div class="pbm-rating-star-container">
+{{pbm.rating}}
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="pbm-parent-title">Parent Title</div>
+                        <p class="pbm-solved mgn-btm-10px">{{pbm.parent_challenge}}</p>
+
+                        <div class="pbm-parent-title">Tags</div>
+                        <p class="pbm-solved mgn-btm-10px"><span ng-repeat="tag in pbm.tags">{{tag}}</span> </p>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="pbm-link-container">
+                        <div class="pbm-likes-count-holder">Likes | 60</div>
+                        <div class="pbm-links-holder"><span>Link :</span>
+                            <a ng-href="{{pbm.url}}" target="_blank">Go To Hacker Earth</a>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+<div class="clear"></div>
+        </div>
+
+        <div class="app-footer">
+            App For Hacker Earth Practice
+        </div>
+
+
+
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>

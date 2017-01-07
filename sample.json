@@ -1,0 +1,85 @@
+https://hackerearth.0x10.info/api/problems?type=json&query=list_problems
+
+{
+    "problems": [{
+        "name": "The Xperiment",
+        "tags": ["Number Theory", "Hard"],
+        "rating": "5",
+        "solved_by": "696",
+        "parent_challenge": "August Clash",
+        "url": "https:\/\/www.hackerearth.com\/problem\/approximate\/the-xperiment\/",
+        "image": "http:\/\/bytesizebio.net\/wp-content\/uploads\/2010\/01\/madscientist.jpg.png"
+    }, {
+        "name": "My girlfriend and her love for cats",
+        "tags": ["Basic Programming", "Easy", "Greedy", "Sorting"],
+        "rating": "3",
+        "solved_by": "649",
+        "parent_challenge": "July Joust",
+        "url": "https:\/\/www.hackerearth.com\/problem\/algorithm\/my-girlfriend-and-her-love-for-cats-1\/",
+        "image": "http:\/\/www.warrenphotographic.co.uk\/photography\/bigs\/05903-Little-girl-and-cats-around-a-chair-white-background.jpg"
+    }, {
+        "name": "The best Internet Browser",
+        "tags": ["Basic Programming", "Easy"],
+        "rating": "4.5",
+        "solved_by": "8424",
+        "parent_challenge": "ThoughtWorks Hiring Challenge",
+        "url": "https:\/\/www.hackerearth.com\/problem\/algorithm\/the-best-internet-browser-3\/",
+        "image": "http:\/\/boldperspective.com\/wp-content\/uploads\/2011\/05\/scissors-url-shortener.png "
+    }, {
+        "name": "Password",
+        "tags": ["Brute Force", "Data Structures", "Easy"],
+        "rating": "4",
+        "solved_by": "2389",
+        "parent_challenge": "Druva Hiring Challenge",
+        "url": "https:\/\/www.hackerearth.com\/problem\/algorithm\/password-1\/",
+        "image": "https:\/\/smellycatproductions.com\/wp-content\/uploads\/2014\/09\/bruteforce.jpg"
+    }, {
+        "name": "Crazy kangaroo",
+        "tags": ["Basic Programming", "Easy", "Math"],
+        "rating": "3.5",
+        "solved_by": "1954",
+        "parent_challenge": "September Easy Challenge",
+        "url": "https:\/\/www.hackerearth.com\/problem\/algorithm\/crazy-kangaroo\/",
+        "image": "http:\/\/media.mnn.com\/assets\/images\/2014\/12\/Kangaroo-4th-green.jpg"
+    }, {
+        "name": "Terrible Chandu",
+        "tags": ["Ad-Hoc", "Easy", "String Algorithms"],
+        "rating": "1",
+        "solved_by": "5979",
+        "parent_challenge": "Code Monk (Arrays & Sttrings)",
+        "url": "https:\/\/www.hackerearth.com\/problem\/algorithm\/terrible-chandu\/",
+        "image": "http:\/\/www.weareteachers.com\/images\/default-source\/blog-images\/bad-student.png"
+    }, {
+        "name": "Monk and his Friend",
+        "tags": ["Bit manipulation", "Easy"],
+        "rating": "3.5",
+        "solved_by": "1226",
+        "parent_challenge": "Code Monk (Bit Manipulation)",
+        "url": "https:\/\/www.hackerearth.com\/problem\/algorithm\/monk-and-his-friend\/",
+        "image": "http:\/\/www.funnypics4all.com\/pics\/2\/7\/2780.jpg"
+    }, {
+        "name": "Alien language",
+        "tags": ["Basic Programming", "Easy"],
+        "rating": "4",
+        "solved_by": "893",
+        "parent_challenge": "September Easy Challenge",
+        "url": "https:\/\/www.hackerearth.com\/problem\/algorithm\/alien-language\/",
+        "image": "http:\/\/dd508hmafkqws.cloudfront.net\/sites\/default\/files\/Jadoo-Koi-mil-gaya.jpg"
+    }, {
+        "name": "Christmas-Gamecon",
+        "tags": ["Algorithms", "Game Theory", "Medium"],
+        "rating": "2",
+        "solved_by": "82",
+        "parent_challenge": "December Easy Challenge",
+        "url": "https:\/\/www.hackerearth.com\/problem\/algorithm\/christmas-gamecon\/",
+        "image": "https:\/\/img.grouponcdn.com\/deal\/jfufndU7xH5rjbVbfpKC\/Lb-2048x1229\/v1\/c312x189.jpg"
+    }, {
+        "name": "",
+        "tags": [""],
+        "rating": null,
+        "solved_by": null,
+        "parent_challenge": null,
+        "url": null,
+        "image": null
+    }]
+}

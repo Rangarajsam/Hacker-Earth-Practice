@@ -21,8 +21,8 @@
         <div class="sort-by-container">
             <div class="sort-by-holder">
                 <p class="sort-by-title">Sort By</p>
-                <div class="sort-by-btn">Rating</div>
-                <div class="sort-by-btn">Like</div>
+                <div class="sort-by-btn" ng-click="sortBy('-rating')">Rating</div>
+                <div class="sort-by-btn" ng-click="sortBy('like')">Like</div>
                 <div class="clear"></div>
             </div>
             <div class="tt-likes-container">
@@ -39,32 +39,32 @@
 
         <div class="app-content-container">
 
-            <div class="pbm-tile-container" ng-repeat="pbm in pbms">
+            <div class="pbm-tile-container" ng-repeat="pbm in pbms | orderBy:sortValue">
                 <div class="pbm-tile-holder">
                     <div class="pbm-tile-img-holder">
-                        <img ng-src="{{pbm.image}}" >
+                        <img ng-src="{{pbm.image}}" err-src="images/no-image.jpg">
                     </div>
                     <div class="pbm-tile-cont-holder">
-                        <h2 class="pbm-tile-title">Monk and his friends</h2>
-                        <p class="pbm-solved mgn-btm-10px">Solved by : {{pbm.solved_by}}</p>
+                        <h2 class="pbm-tile-title">{{pbm.name || "Nil"}}</h2>
+                        <p class="pbm-solved mgn-btm-10px">Solved by : {{pbm.solved_by || "Nil"}}</p>
                         <div class="pbm-rating-container mgn-btm-10px">
                             <p class="pbm-rating-title">Rate</p>
                             <div class="pbm-rating-star-container">
-{{pbm.rating}}
+{{pbm.rating || "Nil"}}
                             </div>
                             <div class="clear"></div>
                         </div>
                         <div class="pbm-parent-title">Parent Title</div>
-                        <p class="pbm-solved mgn-btm-10px">{{pbm.parent_challenge}}</p>
+                        <p class="pbm-solved mgn-btm-10px">{{pbm.parent_challenge || "Nil"}}</p>
 
                         <div class="pbm-parent-title">Tags</div>
-                        <p class="pbm-solved mgn-btm-10px"><span ng-repeat="tag in pbm.tags">{{tag}}</span> </p>
+                        <p class="pbm-solved mgn-btm-10px"><span ng-repeat="tag in pbm.tags">{{tag || "No Tags"}}</span> </p>
                     </div>
                     <div class="clear"></div>
                     <div class="pbm-link-container">
                         <div class="pbm-likes-count-holder">Likes | 60</div>
                         <div class="pbm-links-holder"><span>Link :</span>
-                            <a ng-href="{{pbm.url}}" target="_blank">Go To Hacker Earth</a>
+                            <a ng-href="{{pbm.url || 'https:\/\/www.hackerearth.com\/problem\/'}}" target="_blank">Go To Hacker Earth</a>
                         </div>
                         <div class="clear"></div>
                     </div>

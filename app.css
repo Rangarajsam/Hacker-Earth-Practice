@@ -42,6 +42,10 @@ div {
 .app-content-container {
     width: 100%;
     padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .app-footer {
     width: 100%;
@@ -89,8 +93,8 @@ div {
     border-right: 0;
 }
 .pbm-tile-container {
-    width: 40%;
-    padding: 0 10px;
+    width: 42%;
+    padding: 0 20px;
     float: left;
     margin-bottom: 15px;
 }
@@ -133,10 +137,21 @@ div {
     margin-right: 10px;
     overflow: hidden;
     margin-left: 10px;
+    position: relative;
+}
+.pbm-tile-img-holder img {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
 .pbm-tile-cont-holder{
     float: right;
     width: calc(100% - 270px);
+    min-height: 210px;
+    max-height: 210px;
+    overflow: hidden;
 }
 .pbm-tile-title {
     font: bold 14px/30px arial;
@@ -158,6 +173,7 @@ div {
     margin-right: 10px;
 }
 .pbm-rating-star-container {
+    font: normal 12px/20px arial;
     float: left;
     margin-left: 10px;
 }
@@ -167,7 +183,8 @@ div {
 .pbm-link-container {
     width: 100%;
     background: #156;
-    padding: 5px 15px
+    padding: 5px 15px;
+    margin-top: 10px;
 }
 .pbm-likes-count-holder {
     float: left;

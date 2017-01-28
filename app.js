@@ -4,14 +4,26 @@ hePractice.controller('PbmController', ['$scope', 'pbmService','localDb', functi
     console.log(pbmService.hi);
     var getPbms = pbmService.getProblems();
     $scope.pbms = "";
-    var openDb=localDb.openDb();
+    var pbms;
+    var openDb;
+    var writeDb;
     getPbms.then(function (data) {
-        $scope.pbms = data.data.problems;
-        openDb.then(function(){
-            localDb.writeDb(data);
-            console.log($scope.pbms);
+        openDb=localDb.openDb();
+        
+       writeDb=openDb.then(function(){
+            localDb.writeDb(data.data);
+            console.log(pbms);
+        });
+        
+        writeDb.then(function(){
+            var data =localDb.readDb(1);
+            data.then(function(d){
+                $scope.pbms=d.problems;
+                 console.log($scope.pbms);
+            });
         });
     });
+    
     $scope.sortBy = function (val) {
         $scope.sortValue = val;
     };
@@ -21,7 +33,7 @@ hePractice.controller('PbmController', ['$scope', 'pbmService','localDb', functi
 
 hePractice.service('pbmService', function ($q, $http, localDb) {
     this.hi = "hello";
-    var url = 'https://hackerearth.0x10.info/api/problems?type=json&query=list_problems';
+    var url = 'http://localhost:8000/sample.json';
     this.getProblems = function () {
         var deferred = $q.defer();
         $http.get(url)
@@ -64,7 +76,8 @@ hePractice.factory('localDb', function ($q) {
         openDb: function () {
             var deferred = $q.defer();
             if (isDbSupported) {
-                var requestOpen = indexedDB.open('problem',3);
+                indexedDB.deleteDatabase('problem');
+                var requestOpen = indexedDB.open('problem');
                 requestOpen.onupgradeneeded = function (e) {
                         console.log("Upgrading....");
                         var thisDb = e.target.result;
@@ -80,32 +93,40 @@ hePractice.factory('localDb', function ($q) {
                     };
                     requestOpen.onerror = function (e) {
                         console.log(e);
-                        deferred.resolve(e);
+                        deferred.reject(e);
                     };
                 return deferred.promise;
             }
         },
         writeDb: function (data) {
+            var deferred = $q.defer();
             var transaction = db.transaction(['problemList'], 'readwrite');
             var list = transaction.objectStore('problemList');
-            var requestWrite = list.add(data);
+            var requestWrite = list.add(data,1);
             requestWrite.onerror = function (e) {
                 console.log(e.target.error.name);
+                deferred.reject(e.target.error.name);
             };
             requestWrite.onsuccess = function (e) {
                 console.log("Data Added");
+                deferred.resolve(e.target.result);
             };
+            return deferred.promise;
         },
         readDb: function (key) {
+            var deferred = $q.defer();
             var transaction = db.transaction(['problemList'], 'readonly');
             var list = transaction.objectStore('problemList');
             var requestRead = list.get(key);
             requestRead.onerror = function (e) {
                 console.log(e.target.error.name);
+                deferred.reject(e);
             };
             requestRead.onsuccess = function (e) {
-                return e.target.result;
+                console.log(e.target.result);
+                deferred.resolve(e.target.result);
             };
+            return deferred.promise;
         }
 
     }

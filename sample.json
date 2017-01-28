@@ -1,5 +1,3 @@
-https://hackerearth.0x10.info/api/problems?type=json&query=list_problems
-
 {
     "problems": [{
         "name": "The Xperiment",
